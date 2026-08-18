@@ -1,19 +1,11 @@
 import SwiftUI
 
-enum FavoriteAction {
-    case added
-    case removed
-}
-
-final class ProductListModelView: ObservableObject {
+final class ProductListViewModel: ObservableObject {
     
     private let fetchProductsUseCase: FetchProductsUseCase
-        
-    init(
-        fetchProductsUseCase: FetchProductsUseCase = FetchProductsUseCase()
-    ) {
+    
+    init(fetchProductsUseCase: FetchProductsUseCase) {
         self.fetchProductsUseCase = fetchProductsUseCase
-        
         loadFavorites()
         fetchProducts()
     }
@@ -23,11 +15,9 @@ final class ProductListModelView: ObservableObject {
     @Published var searchText: String = ""
     @Published var favoriteProducts: Set<Int> = []
     @Published var showFavoritePopup = false
-    @Published var favoriteAction: FavoriteAction = .added
-    
     @Published var products: [Product] = []
     @Published var searchedProducts: [Product] = []
-    
+    @Published var favoritePopup: FavoritePopup?
     @Published var isLoading = false
     @Published var errorMessage: String?
     
@@ -36,7 +26,7 @@ final class ProductListModelView: ObservableObject {
     // MARK: - Constants
     
     private let favoritesKey = "favoriteProducts"
-    
+    private let favouritePopupDelay = 1.0
     
     // MARK: - Fetch Products
     
@@ -71,17 +61,36 @@ final class ProductListModelView: ObservableObject {
     // MARK: - Favorite Handling
     
     func toggleFavorite(product: Product) {
-        
         if favoriteProducts.contains(product.id) {
             favoriteProducts.remove(product.id)
-            favoriteAction = .removed
+            
+            favoritePopup = FavoritePopup(
+                message: "Removed from Favorites",
+                icon: "heart",
+                color: .black
+            )
         } else {
             favoriteProducts.insert(product.id)
-            favoriteAction = .added
+            
+            favoritePopup = FavoritePopup(
+                message: "Added to Favorites",
+                icon: "heart.fill",
+                color: .red
+            )
         }
         
         saveFavorites()
         showPopup()
+    }
+    
+    private func showPopup() {
+        showFavoritePopup = true
+        
+        DispatchQueue.main.asyncAfter(
+            deadline: .now() + favouritePopupDelay
+        ) { [weak self] in
+            self?.showFavoritePopup = false
+        }
     }
     
     
@@ -123,19 +132,7 @@ final class ProductListModelView: ObservableObject {
     }
     
     
-    // MARK: - Popup
     
-    private func showPopup() {
-        
-        showFavoritePopup = true
-        
-        DispatchQueue.main.asyncAfter(
-            deadline: .now() + 1
-        ) { [weak self] in
-            self?.showFavoritePopup = false
-        }
-    }
-        
     // MARK: - Search
     
     func search() {
@@ -150,4 +147,4 @@ final class ProductListModelView: ObservableObject {
             || product.category?.localizedCaseInsensitiveContains(searchText) == true
         }
     }
-    }
+}

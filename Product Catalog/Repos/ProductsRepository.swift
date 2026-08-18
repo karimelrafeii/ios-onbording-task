@@ -4,9 +4,7 @@ final class ProductRepository: ProductRepositoryProtocol {
     
     private let apiService: ProductAPIService
     
-    init(
-        apiService: ProductAPIService = ProductAPIService()
-    ) {
+    init(apiService: ProductAPIService) {
         self.apiService = apiService
     }
     

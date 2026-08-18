@@ -3,13 +3,9 @@ import Moya
 
 final class ProductAPIService {
     
-    private let provider: MoyaProvider<ProductAPI>
+    private let provider: MoyaProvider<ProductAPI> = MoyaProvider<ProductAPI>()
     
-    init(
-        provider: MoyaProvider<ProductAPI> = MoyaProvider<ProductAPI>()
-    ) {
-        self.provider = provider
-    }
+    init() {}
     
     func fetchProducts(
         completion: @escaping (Result<[Product], Error>) -> Void

@@ -4,9 +4,7 @@ final class FetchProductsUseCase {
     
     private let repository: ProductRepositoryProtocol
     
-       init(
-           repository: ProductRepositoryProtocol = ProductRepository()
-       ) {
+       init(repository: ProductRepositoryProtocol) {
            self.repository = repository
        }
     
