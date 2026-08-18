@@ -3,8 +3,8 @@
 //  Product Catalog
 //
 //  Created by ziad dahish on 12/08/2026.
-//
 
+import L10n_swift
 import SwiftUI
 import Moya
 
@@ -24,12 +24,26 @@ struct ProductListView: View {
                 ) {
                     
                     // MARK: - Header
+                    HStack {
+                        Text("new_arrival".l10n())
+                            .fontWeight(.heavy)
+                            .font(.system(size: 40))
+
+                        Spacer()
+
+                        Button {
+                            productListViewModel.toggleLanguage()
+                        } label: {
+                            Text(
+                                productListViewModel.currentLanguage == "en"
+                                ? "عربي"
+                                : "English"
+                            )
+                            .font(.system(size: 16, weight: .bold))
+                        }
+                    }
                     
-                    Text("New Arrivals")
-                        .fontWeight(.heavy)
-                        .font(.system(size: 40))
-                    
-                    Text("Discover our latest collection")
+                    Text("discover".l10n())
                         .font(.system(size: 21))
                         .foregroundColor(.gray)
                     

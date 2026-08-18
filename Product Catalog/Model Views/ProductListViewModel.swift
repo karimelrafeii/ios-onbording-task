@@ -1,4 +1,5 @@
 import SwiftUI
+import L10n_swift
 
 final class ProductListViewModel: ObservableObject {
     
@@ -21,7 +22,17 @@ final class ProductListViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     
+    @Published var currentLanguage: String = L10n.shared.language
     
+    func toggleLanguage() {
+            if currentLanguage == "en" {
+                L10n.shared.language = "ar"
+                currentLanguage = "ar"
+            } else {
+                L10n.shared.language = "en"
+                currentLanguage = "en"
+            }
+        }
     
     // MARK: - Constants
     

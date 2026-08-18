@@ -11,6 +11,7 @@
 		EDA1A8F5303461370075DC5B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EDA1A8F4303461370075DC5B /* Moya */; };
 		EDA1A8F7303461370075DC5B /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = EDA1A8F6303461370075DC5B /* ReactiveMoya */; };
 		EDA1A8F9303461370075DC5B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = EDA1A8F8303461370075DC5B /* RxMoya */; };
+		EDA1A9CC3034B68D0075DC5B /* L10n-swift in Frameworks */ = {isa = PBXBuildFile; productRef = EDA1A9CB3034B68D0075DC5B /* L10n-swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +37,35 @@
 		DA40BD56302C9D9A000E4D77 /* Product CatalogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Product CatalogUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EDA1A97F3034B41E0075DC5B /* Exceptions for "Product Catalog" folder in "Product Catalog" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LocalizedAr.strings,
+				LocalizedEn.strings,
+			);
+			target = DA40BD3A302C9D97000E4D77 /* Product Catalog */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		EDA1A9803034B41E0075DC5B /* Exceptions for "Product Catalog" folder in "Compile Sources" phase from "Product Catalog" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = DA40BD37302C9D97000E4D77 /* Sources */;
+			membershipExceptions = (
+				LocalizedAr.strings,
+				LocalizedEn.strings,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DA40BD3D302C9D97000E4D77 /* Product Catalog */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EDA1A97F3034B41E0075DC5B /* Exceptions for "Product Catalog" folder in "Product Catalog" target */,
+				EDA1A9803034B41E0075DC5B /* Exceptions for "Product Catalog" folder in "Compile Sources" phase from "Product Catalog" target */,
+			);
 			path = "Product Catalog";
 			sourceTree = "<group>";
 		};
@@ -63,6 +90,7 @@
 				EDA1A8F3303461370075DC5B /* CombineMoya in Frameworks */,
 				EDA1A8F9303461370075DC5B /* RxMoya in Frameworks */,
 				EDA1A8F7303461370075DC5B /* ReactiveMoya in Frameworks */,
+				EDA1A9CC3034B68D0075DC5B /* L10n-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +155,7 @@
 				EDA1A8F4303461370075DC5B /* Moya */,
 				EDA1A8F6303461370075DC5B /* ReactiveMoya */,
 				EDA1A8F8303461370075DC5B /* RxMoya */,
+				EDA1A9CB3034B68D0075DC5B /* L10n-swift */,
 			);
 			productName = "Product Catalog";
 			productReference = DA40BD3B302C9D97000E4D77 /* Product Catalog.app */;
@@ -213,6 +242,7 @@
 			packageReferences = (
 				EDA1A8B6303443E00075DC5B /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				EDA1A8C230345A1A0075DC5B /* XCRemoteSwiftPackageReference "Moya" */,
+				EDA1A9833034B5A20075DC5B /* XCRemoteSwiftPackageReference "L10n-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DA40BD3C302C9D97000E4D77 /* Products */;
@@ -622,6 +652,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		EDA1A9833034B5A20075DC5B /* XCRemoteSwiftPackageReference "L10n-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Decybel07/L10n-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -644,6 +682,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EDA1A8C230345A1A0075DC5B /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		EDA1A9CB3034B68D0075DC5B /* L10n-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDA1A9833034B5A20075DC5B /* XCRemoteSwiftPackageReference "L10n-swift" */;
+			productName = "L10n-swift";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,5 +1,5 @@
 {
-  "originHash" : "82650bd4abceb604d6b9127fdd147f48db77fdc62f5dd21cc0d98df5769b2a03",
+  "originHash" : "08f7fb8c8b6b3c9294e46db729075a01b7ccaa542e2e115a897d751281ade94d",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "7595cbcf59809f9977c5f6378500de2ad73b7ddb",
         "version" : "5.12.0"
+      }
+    },
+    {
+      "identity" : "l10n-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Decybel07/L10n-swift",
+      "state" : {
+        "revision" : "ad62717311be1eb4571d0025902a0043fdaf5a33",
+        "version" : "5.10.3"
       }
     },
     {
