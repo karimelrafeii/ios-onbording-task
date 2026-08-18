@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Moya
 
 struct ProductListView: View {
 
@@ -94,14 +95,15 @@ struct ProductListView: View {
                                     alignment: .leading,
                                     spacing: 5
                                 ) {
-
-                                    Image("Image1")
+                                AsyncImage(url: URL(string: product.imageURL)) { image in
+                                    image
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 370)
-                                        .padding(.top)
-
-
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .frame(width: 370)
+                                .padding(.top)
                                     Text(product.category ?? "Category")
                                         .foregroundColor(.gray)
                                         .padding(.top, 10)
@@ -226,8 +228,22 @@ struct ProductListView: View {
 
 
 #Preview {
-
+    
+    let provider = MoyaProvider<ProductAPI>()
+    
+    let repository = ProductRepository(
+        provider: provider
+    )
+    
+    let fetchProductsUseCase = FetchProductsUseCase(
+        repository: repository
+    )
+    
+    let viewModel = ProductListModelView(
+        fetchProductsUseCase: fetchProductsUseCase
+    )
+    
     ProductListView(
-        productListModelView: ProductListModelView()
+        productListModelView: viewModel
     )
 }

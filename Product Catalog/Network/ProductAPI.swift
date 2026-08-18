@@ -8,13 +8,13 @@ enum ProductAPI {
 extension ProductAPI: TargetType {
     
     var baseURL: URL {
-        URL(string: "https://fakestoreapi.com")!
+        URL(string: "https://free.mockerapi.com/mock/720362ed-3437-45a5-b88b-d564159ca9bb")!
     }
     
     var path: String {
         switch self {
         case .getProducts:
-            return "/products"
+            return ""
         }
     }
     

@@ -7,12 +7,24 @@ struct Product: Identifiable, Codable {
     let price: Double
     let imageURL: String
     let rating: Rating?
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case description
+        case category
+        case price
+        case imageURL = "image"
+        case rating
+    }
 }
 
 struct Rating:  Codable{
     let rate: Double
     let count: Int
 }
+
+
+
 
 let dummyProducts: [Product] = [
     Product(
