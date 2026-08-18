@@ -195,6 +195,10 @@
 			);
 			mainGroup = DA40BD32302C9D97000E4D77;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EDA1A8B6303443E00075DC5B /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				EDA1A8C230345A1A0075DC5B /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DA40BD3C302C9D97000E4D77 /* Products */;
 			projectDirPath = "";
@@ -583,6 +587,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDA1A8B6303443E00075DC5B /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
+		EDA1A8C230345A1A0075DC5B /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = DA40BD33302C9D97000E4D77 /* Project object */;
 }
