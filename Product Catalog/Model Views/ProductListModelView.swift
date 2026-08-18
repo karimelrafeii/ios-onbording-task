@@ -14,6 +14,7 @@ final class ProductListModelView: ObservableObject {
     @Published var showFavoritePopup = false
     @Published var favoriteAction: FavoriteAction = .added
     
+    @Published var products: [Product] = []
     @Published var searchedProducts: [Product] = []
     
     @Published var isLoading = false
@@ -59,6 +60,7 @@ final class ProductListModelView: ObservableObject {
                 switch result {
                     
                 case .success(let products):
+                    self.products = products
                     self.searchedProducts = products
                     
                 case .failure(let error):
@@ -142,12 +144,13 @@ final class ProductListModelView: ObservableObject {
     func search() {
         
         if searchText.isEmpty {
-            fetchProducts()
-        } else {
-            searchedProducts = searchedProducts.filter { product in
-                product.title.localizedCaseInsensitiveContains(searchText)
-                || product.category?.localizedCaseInsensitiveContains(searchText) == true
-            }
+            searchedProducts = products
+            return
+        }
+        
+        searchedProducts = products.filter { product in
+            product.title.localizedCaseInsensitiveContains(searchText)
+            || product.category?.localizedCaseInsensitiveContains(searchText) == true
         }
     }
-}
+    }
