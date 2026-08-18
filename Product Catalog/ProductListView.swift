@@ -95,15 +95,11 @@ struct ProductListView: View {
                                     alignment: .leading,
                                     spacing: 5
                                 ) {
-                                AsyncImage(url: URL(string: product.imageURL)) { image in
-                                    image
-                                        .resizable()
-                                        .scaledToFit()
-                                } placeholder: {
-                                    ProgressView()
-                                }
-                                .frame(width: 370)
-                                .padding(.top)
+                                    CachedAsyncImage(
+                                        url: product.imageURL
+                                    )
+                                    .frame(width: 370)
+                                    .padding(.top)
                                     Text(product.category ?? "Category")
                                         .foregroundColor(.gray)
                                         .padding(.top, 10)
