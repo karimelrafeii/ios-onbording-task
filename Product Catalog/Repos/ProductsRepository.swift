@@ -1,37 +1,20 @@
 import Foundation
-import Moya
 
 final class ProductRepository: ProductRepositoryProtocol {
     
-    private let provider: MoyaProvider<ProductAPI>
+    private let apiService: ProductAPIService
     
-    init(provider: MoyaProvider<ProductAPI>) {
-        self.provider = provider
+    init(
+        apiService: ProductAPIService = ProductAPIService()
+    ) {
+        self.apiService = apiService
     }
     
     func fetchProducts(
         completion: @escaping (Result<[Product], Error>) -> Void
     ) {
-        provider.request(.getProducts) { result in
-            
-            switch result {
-            case .success(let response):
-                
-                do {
-                    let products = try JSONDecoder().decode(
-                        [Product].self,
-                        from: response.data
-                    )
-                    
-                    completion(.success(products))
-                    
-                } catch {
-                    completion(.failure(error))
-                }
-                
-            case .failure(let error):
-                completion(.failure(error))
-            }
+        apiService.fetchProducts { result in
+            completion(result)
         }
     }
 }

@@ -4,9 +4,11 @@ final class FetchProductsUseCase {
     
     private let repository: ProductRepositoryProtocol
     
-    init(repository: ProductRepositoryProtocol) {
-        self.repository = repository
-    }
+       init(
+           repository: ProductRepositoryProtocol = ProductRepository()
+       ) {
+           self.repository = repository
+       }
     
     func execute(
         completion: @escaping (Result<[Product], Error>) -> Void

@@ -229,21 +229,7 @@ struct ProductListView: View {
 
 #Preview {
     
-    let provider = MoyaProvider<ProductAPI>()
-    
-    let repository = ProductRepository(
-        provider: provider
-    )
-    
-    let fetchProductsUseCase = FetchProductsUseCase(
-        repository: repository
-    )
-    
-    let viewModel = ProductListModelView(
-        fetchProductsUseCase: fetchProductsUseCase
-    )
-    
     ProductListView(
-        productListModelView: viewModel
+        productListModelView: ProductListModelView()
     )
 }

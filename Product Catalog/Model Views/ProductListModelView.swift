@@ -7,6 +7,17 @@ enum FavoriteAction {
 
 final class ProductListModelView: ObservableObject {
     
+    private let fetchProductsUseCase: FetchProductsUseCase
+        
+    init(
+        fetchProductsUseCase: FetchProductsUseCase = FetchProductsUseCase()
+    ) {
+        self.fetchProductsUseCase = fetchProductsUseCase
+        
+        loadFavorites()
+        fetchProducts()
+    }
+    
     // MARK: - Published Properties
     
     @Published var searchText: String = ""
@@ -21,24 +32,10 @@ final class ProductListModelView: ObservableObject {
     @Published var errorMessage: String?
     
     
-    // MARK: - Dependencies
-    
-    private let fetchProductsUseCase: FetchProductsUseCase
-    
     
     // MARK: - Constants
     
     private let favoritesKey = "favoriteProducts"
-    
-    
-    // MARK: - Initialization
-    
-    init(fetchProductsUseCase: FetchProductsUseCase) {
-        self.fetchProductsUseCase = fetchProductsUseCase
-        
-        loadFavorites()
-        fetchProducts()
-    }
     
     
     // MARK: - Fetch Products
