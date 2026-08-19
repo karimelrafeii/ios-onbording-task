@@ -37,35 +37,9 @@
 		DA40BD56302C9D9A000E4D77 /* Product CatalogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Product CatalogUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		EDA1A97F3034B41E0075DC5B /* Exceptions for "Product Catalog" folder in "Product Catalog" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				LocalizedAr.strings,
-				LocalizedEn.strings,
-			);
-			target = DA40BD3A302C9D97000E4D77 /* Product Catalog */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		EDA1A9803034B41E0075DC5B /* Exceptions for "Product Catalog" folder in "Compile Sources" phase from "Product Catalog" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = DA40BD37302C9D97000E4D77 /* Sources */;
-			membershipExceptions = (
-				LocalizedAr.strings,
-				LocalizedEn.strings,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DA40BD3D302C9D97000E4D77 /* Product Catalog */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				EDA1A97F3034B41E0075DC5B /* Exceptions for "Product Catalog" folder in "Product Catalog" target */,
-				EDA1A9803034B41E0075DC5B /* Exceptions for "Product Catalog" folder in "Compile Sources" phase from "Product Catalog" target */,
-			);
 			path = "Product Catalog";
 			sourceTree = "<group>";
 		};
@@ -236,6 +210,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = DA40BD32302C9D97000E4D77;
 			minimizedProjectReferenceProxies = 1;
@@ -375,6 +350,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -429,6 +405,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
