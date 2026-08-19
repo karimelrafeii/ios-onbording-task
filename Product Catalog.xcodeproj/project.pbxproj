@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EDA1A8F3303461370075DC5B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = EDA1A8F2303461370075DC5B /* CombineMoya */; };
+		EDA1A8F5303461370075DC5B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EDA1A8F4303461370075DC5B /* Moya */; };
+		EDA1A8F7303461370075DC5B /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = EDA1A8F6303461370075DC5B /* ReactiveMoya */; };
+		EDA1A8F9303461370075DC5B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = EDA1A8F8303461370075DC5B /* RxMoya */; };
+		EDA1A9CC3034B68D0075DC5B /* L10n-swift in Frameworks */ = {isa = PBXBuildFile; productRef = EDA1A9CB3034B68D0075DC5B /* L10n-swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		DA40BD4D302C9D9A000E4D77 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +60,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA1A8F5303461370075DC5B /* Moya in Frameworks */,
+				EDA1A8F3303461370075DC5B /* CombineMoya in Frameworks */,
+				EDA1A8F9303461370075DC5B /* RxMoya in Frameworks */,
+				EDA1A8F7303461370075DC5B /* ReactiveMoya in Frameworks */,
+				EDA1A9CC3034B68D0075DC5B /* L10n-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +125,11 @@
 			);
 			name = "Product Catalog";
 			packageProductDependencies = (
+				EDA1A8F2303461370075DC5B /* CombineMoya */,
+				EDA1A8F4303461370075DC5B /* Moya */,
+				EDA1A8F6303461370075DC5B /* ReactiveMoya */,
+				EDA1A8F8303461370075DC5B /* RxMoya */,
+				EDA1A9CB3034B68D0075DC5B /* L10n-swift */,
 			);
 			productName = "Product Catalog";
 			productReference = DA40BD3B302C9D97000E4D77 /* Product Catalog.app */;
@@ -192,9 +210,15 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = DA40BD32302C9D97000E4D77;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EDA1A8B6303443E00075DC5B /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				EDA1A8C230345A1A0075DC5B /* XCRemoteSwiftPackageReference "Moya" */,
+				EDA1A9833034B5A20075DC5B /* XCRemoteSwiftPackageReference "L10n-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DA40BD3C302C9D97000E4D77 /* Products */;
 			projectDirPath = "";
@@ -326,6 +350,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -380,6 +405,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -392,6 +418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Product Catalog/Preview Content\"";
+				DEVELOPMENT_TEAM = M6RQ7W5GA6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -429,6 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Product Catalog/Preview Content\"";
+				DEVELOPMENT_TEAM = M6RQ7W5GA6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -583,6 +611,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDA1A8B6303443E00075DC5B /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
+		EDA1A8C230345A1A0075DC5B /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		EDA1A9833034B5A20075DC5B /* XCRemoteSwiftPackageReference "L10n-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Decybel07/L10n-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDA1A8F2303461370075DC5B /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDA1A8C230345A1A0075DC5B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		EDA1A8F4303461370075DC5B /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDA1A8C230345A1A0075DC5B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		EDA1A8F6303461370075DC5B /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDA1A8C230345A1A0075DC5B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		EDA1A8F8303461370075DC5B /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDA1A8C230345A1A0075DC5B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		EDA1A9CB3034B68D0075DC5B /* L10n-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDA1A9833034B5A20075DC5B /* XCRemoteSwiftPackageReference "L10n-swift" */;
+			productName = "L10n-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA40BD33302C9D97000E4D77 /* Project object */;
 }
