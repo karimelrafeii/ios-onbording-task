@@ -4,7 +4,9 @@ struct ProductDetailsView: View {
     
     let product: Product
     
-    @StateObject var productDetailsModelView = ProductDetailsModelView()
+    @StateObject var productDetailsModelView = ProductDetailsModelView(
+        cartRepository: CartRepositoryProvider.provide()
+    )
     
     var body: some View {
         ScrollView {

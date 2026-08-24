@@ -49,9 +49,7 @@ struct ProductInfoView: View {
             
             // Price
             Text(
-                "$\(product.price.formatted(
-                    .number.precision(.fractionLength(2))
-                ))"
+                "$\(product.price.formatted(.number.precision(.fractionLength(2))))"
             )
             .font(.system(size: 30))
             .frame(
